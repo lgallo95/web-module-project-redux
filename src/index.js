@@ -9,9 +9,16 @@ import App from './components/App';
 import { BrowserRouter as Router } from 'react-router-dom';
 import './index.css';
 
-ReactDOM.render(
+const store = createStore(reducer);
+console.log(store.getState());
+
+
+
+
+ReactDOM.render(<Provider store = {store}>
   <Router>
       <App />
-  </Router>,
+  </Router>
+  </Provider>,
   document.getElementById('root')
 );
